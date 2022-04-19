@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Question5
 {
@@ -28,5 +28,40 @@ public class Question5
      
     Scanner in = new Scanner(System.in);
     
+    int arrlength = in.nextInt();
+
+    int newarray[] = new int[arrlength];
+
+    for (int i = 0 ; i < arrlength ; i++) {
+
+        int input = in.nextInt();
+
+        newarray[i] = input;
+    }
+
+    Arrays.sort(newarray);
+
+    int freq = 1;
+    int mode = newarray[0];
+    int max = 0;
+    for (int i = 1; i < arrlength; i++ ) {
+        if (newarray[i] == newarray[i - 1]){
+            freq++;
+        }
+        else{
+            if (freq > max){
+                mode = newarray[i - 1];
+                max = freq;
+                
+            }
+            freq = 1;
+        }
+    }
+    if (freq > max){
+        max = freq;
+        mode = newarray[arrlength - 1];
+    }
+
+    System.out.println(mode);
   }
 }
