@@ -19,5 +19,22 @@ public class Question4
      
     Scanner in = new Scanner(System.in);
     
+    int num = in.nextInt();
+    
+    int count = num;
+
+    for (int a = 0; a < num ; a++ ) {
+	    
+
+        for (int it = 0; it < count ; it++ ) {
+	    
+        System.out.print("*");
+
+        }
+
+        count--;
+        System.out.println();
+    } 
   }
+
 }
